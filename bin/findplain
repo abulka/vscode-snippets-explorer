@@ -1,0 +1,17 @@
+# find snippet files that are simply called 'snippets.json'
+
+# should look for names that are not a language id (more complex) 
+# https://code.visualstudio.com/docs/languages/identifiers lists official ones but flutter and dart are not there
+# so obviously its a subset!
+
+# project level e.g. play project
+find "/Users/Andy/Devel/vscode-extensions/play/.vscode/"*.code-snippets -name snippets.json 
+
+# user level
+find "/Users/andy/Library/Application Support/Code/User/snippets"/* -name snippets.json
+
+# extensions e.g. .../dart-code.dart-code-3.13.1/snippets/dart.json
+find /Users/andy/.vscode/extensions/*/snippets -name snippets.json
+
+# built in
+find "/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/"*/snippets -name snippets.json

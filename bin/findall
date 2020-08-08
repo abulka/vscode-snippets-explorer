@@ -1,0 +1,13 @@
+# find all snippet files
+
+# project level e.g. play project
+find "/Users/Andy/Devel/vscode-extensions/play/.vscode/"*.code-snippets
+
+# user level
+find "/Users/andy/Library/Application Support/Code/User/snippets"/*
+
+# extensions e.g. .../dart-code.dart-code-3.13.1/snippets/dart.json
+find /Users/andy/.vscode/extensions/*/snippets
+
+# built in
+find "/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/"*/snippets

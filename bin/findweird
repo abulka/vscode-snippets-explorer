@@ -1,0 +1,13 @@
+# find weird .source nested snippets, look everywhere possible
+
+# project level e.g. play project
+grep "\.source\." "/Users/Andy/Devel/vscode-extensions/play/.vscode/"*.code-snippets
+
+# user level
+grep "\.source\." "/Users/andy/Library/Application Support/Code/User/snippets"/*
+
+# extensions e.g. .../dart-code.dart-code-3.13.1/snippets/dart.json
+grep -r "\.source\." /Users/andy/.vscode/extensions/*/snippets/
+
+# built in
+grep -r "\.source\." "/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/"*/snippets/

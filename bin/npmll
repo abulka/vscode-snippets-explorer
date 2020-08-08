@@ -1,0 +1,24 @@
+# list both global and local project node modules - verbose
+# with offers to update local project package.json using ncu tool
+
+echo "node version"
+node --version
+echo
+
+echo "npm version"
+npm --version
+echo
+
+echo "----- GLOBALLY ------"
+npm list -g --depth=0
+npm -g outdated
+
+echo "----- PROJECT ------"
+npm list --depth=0
+npm outdated
+
+# install the super command 'ncu' globally with 'npm install -g npm-check-updates'
+echo
+echo "Here are the latest versions your package.json could be using"
+echo
+ncu
