@@ -1,7 +1,7 @@
 {
 	"name": "snippetsexplorer",
 	"displayName": "Snippets Explorer",
-	"description": "Displays all available snippets in a TreeView ",
+	"description": "Displays all available snippets in a TreeView",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.47.0"

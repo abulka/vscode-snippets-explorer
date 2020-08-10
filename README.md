@@ -1,14 +1,25 @@
-# snippetexplorer README
+# Snippets Explorer
 
-This is the README for your extension "snippetexplorer". After writing up a brief description, we recommend including the following sections.
+This extension displays all available Visual Studio Code language snippets in a TreeView.
+
+![feature X](images/videos/demo1.gif)
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Click on a snippet and it will be inserted into the active code editor.
+Hover over a snippet and the snippet body will be displayed.
+
+# How to Use
+
+After the extension is installed, a treeview should be available called "Snippets Explorer". 
+
+![feature X](images/doc/getting-started-1.png)
+
+Simply click to expand it and you should see all the snippets for the language of the currently open editor.
+
+![feature X](images/doc/getting-started-2.png)
 
 For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
 
 > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
