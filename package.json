@@ -7,8 +7,20 @@
 		"vscode": "^1.47.0"
 	},
 	"categories": [
+		"Snippets",
 		"Other"
 	],
+	"publisher": "wware",
+	"icon": "images/icon.png",
+	"author": {
+		"name": "Andy Bulka",
+		"url": "https://github.com/abulka",
+		"email": "abulka@gmail.com"
+	},	
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/abulka/vscode-snippets-explorer"
+	},	
 	"activationEvents": [
 		"onCommand:extension.snippet_inserter",
 		"onCommand:extension.enumerateSnippets",

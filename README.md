@@ -2,7 +2,7 @@
 
 This extension displays all available Visual Studio Code language snippets in a TreeView.
 
-![feature X](images/videos/demo1.gif)
+![Example](https://raw.githubusercontent.com/abulka/vscode-snippets-explorer/master/images/videos/demo1.gif)
 
 ## Features
 
