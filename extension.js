@@ -1,6 +1,8 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
+const { snippet_inserter } = require('./lib/snippet_inserter');
+const { TreeDataProvider: SnippetTreeDataProvider } = require('./lib/snippet_tree')
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -12,24 +14,63 @@ function activate(context) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "snippetexplorer" is now active!');
+	console.log('Congratulations, your extension "snippetsexplorer" is now active!');
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('snippetexplorer.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
+	let disposable
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from snippetexplorer!');
+	disposable = vscode.commands.registerCommand('extension.snippet_inserter', function (snippetBody) {
+		if (!snippetBody)
+			vscode.window.showInformationMessage(`Insert Snippet from Treeview is triggered by clicking on a snippet in the treeview - shouldn't be manually invoked`);
+		snippet_inserter(snippetBody)
 	});
-
 	context.subscriptions.push(disposable);
+
+	// tree view stuff (tree data providers are all NodeDependenciesProvider types)
+
+	let snippetTreeDataProvider = new SnippetTreeDataProvider()
+	let treeview = vscode.window.createTreeView('snippetsExplorerView', {
+		showCollapseAll: true,
+		treeDataProvider: snippetTreeDataProvider
+	});
+	snippetTreeDataProvider.treeview = treeview // a bit hacky - is there a better way?
+
+	// snippets tree 'refresh' button
+	vscode.commands.registerCommand('snippetsExplorer.refreshEntry', () =>
+		snippetTreeDataProvider.refresh()
+	);
+
 }
 exports.activate = activate;
 
 // this method is called when your extension is deactivated
-function deactivate() {}
+function deactivate() { }
+
+/*
+Possible future command, to enable add this:
+
+	"commands": [
+		{
+			"command": "extension.enumerateSnippets",
+			"title": "Snippets Explorer: Enumerate All Snippets"
+		},
+
+And uncomment this code:
+
+	const { enumerateSnippets } = require('./lib/snippet_enumerator');
+
+	function activate(context) {
+		...
+		disposable = vscode.commands.registerCommand('extension.enumerateSnippets', function () {
+			let tmpSnippetTree = {} // discarded after we fill it in
+			let snippetTree = enumerateSnippets(tmpSnippetTree, 'javascript')
+			vscode.window.showInformationMessage(`Snippets found for languages: ${Object.keys(snippetTree)}`);
+				// perhaps do something else useful - insert all filenames or snippet names into active doc?
+		});
+		context.subscriptions.push(disposable);
+*/
 
 module.exports = {
 	activate,

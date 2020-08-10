@@ -9,6 +9,13 @@ function run() {
 		color: true
 	});
 
+	// ANDY HAD TO REMOVE
+	// Use any mocha API
+	// (node:366166) DeprecationWarning: "useColors()" is DEPRECATED, please use "color()" instead.
+	// mocha.useColors(true);
+	// mocha.color(true);
+
+	// ANDY HAD TO ADD
 	const testsRoot = path.resolve(__dirname, '..');
 
 	return new Promise((c, e) => {
@@ -30,9 +37,6 @@ function run() {
 					}
 				});
 			} catch (err) {
-				// ANDY REMOVED - to match latest way
-				console.error(err);
-
 				e(err);
 			}
 		});

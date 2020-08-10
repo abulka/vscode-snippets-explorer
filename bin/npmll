@@ -12,6 +12,7 @@ echo
 echo "----- GLOBALLY ------"
 npm list -g --depth=0
 npm -g outdated
+echo "use npm upgrade -g to upgrade all global npm packages"
 
 echo "----- PROJECT ------"
 npm list --depth=0

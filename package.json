@@ -1,6 +1,6 @@
 {
-	"name": "snippetexplorer",
-	"displayName": "Snippet Explorer",
+	"name": "snippetsexplorer",
+	"displayName": "Snippets Explorer",
 	"description": "Displays all available snippets in a TreeView ",
 	"version": "0.0.1",
 	"engines": {
@@ -10,21 +10,52 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:snippetexplorer.helloWorld"
+		"onCommand:extension.snippet_inserter",
+		"onCommand:extension.enumerateSnippets",
+		"onView:exampleView",
+		"onView:snippetsExplorerView"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "snippetexplorer.helloWorld",
-				"title": "Hello World"
+				"command": "extension.snippet_inserter",
+				"title": "Snippets Explorer: Insert Snippet from Treeview"
+			},
+			{
+				"command": "snippetsExplorer.refreshEntry",
+				"title": "Refresh (rescan available snippets)",
+				"icon": {
+					"light": "images/light/refresh.svg",
+					"dark": "images/dark/refresh.svg"
+				}
 			}
-		]
+		],
+		"views": {
+			"explorer": [
+				{
+					"id": "snippetsExplorerView",
+					"name": "Snippets Explorer"
+				}
+			]
+		},
+		"menus": {
+			"view/title": [
+				{
+					"command": "snippetsExplorer.refreshEntry",
+					"when": "view == snippetsExplorerView",
+					"group": "navigation"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"lint": "eslint .",
 		"pretest": "npm run lint",
 		"test": "node ./test/runTest.js"
+	},
+	"dependencies": {
+		"json5": "^2.1.3"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.47.0",
@@ -35,6 +66,7 @@
 		"glob": "^7.1.6",
 		"mocha": "^7.1.2",
 		"typescript": "^3.8.3",
-		"vscode-test": "^1.3.0"
+		"vscode-test": "^1.3.0",
+		"jsonc-parser": "^2.3.0"
 	}
 }
