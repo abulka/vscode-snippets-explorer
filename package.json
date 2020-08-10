@@ -1,14 +1,20 @@
 {
-	"name": "snippetsexplorer",
+	"name": "snippets-explorer",
 	"displayName": "Snippets Explorer",
 	"description": "Displays all available snippets in a TreeView",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
 	"categories": [
 		"Snippets",
 		"Other"
+	],
+	"keywords": [
+		"snippet",
+		"treeview",
+		"organise",
+		"explore"
 	],
 	"publisher": "wware",
 	"icon": "images/icon.png",
