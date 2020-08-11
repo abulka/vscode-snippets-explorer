@@ -2,9 +2,15 @@
 
 All notable changes to the "snippet-explorer" extension will be documented in this file.
 
+## 0.0.4
+
+- Added missing jsonc parser to packages
+- Protect against various language mode events, and some events being undefined
+- Added logging - see `C:\Users\YOURUSERNAME\AppData\Local\Programs\Microsoft VS Code\snippets-explorer-combined.log`
+
 ## 0.0.3
 
-- Fixed Windows 10 issues
+- Fixed Windows 10 snippet paths
 
 ## 0.0.2
 
