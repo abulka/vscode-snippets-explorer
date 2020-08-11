@@ -2,7 +2,7 @@
 	"name": "snippets-explorer",
 	"displayName": "Snippets Explorer",
 	"description": "Displays all available snippets in a TreeView",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -22,11 +22,11 @@
 		"name": "Andy Bulka",
 		"url": "https://github.com/abulka",
 		"email": "abulka@gmail.com"
-	},	
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/abulka/vscode-snippets-explorer"
-	},	
+	},
 	"activationEvents": [
 		"onCommand:extension.snippet_inserter",
 		"onCommand:extension.enumerateSnippets",

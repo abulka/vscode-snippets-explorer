@@ -2,6 +2,9 @@
 
 All notable changes to the "snippet-explorer" extension will be documented in this file.
 
+## 0.0.3
+
+- Fixed Windows 10 issues
 
 ## 0.0.2
 
