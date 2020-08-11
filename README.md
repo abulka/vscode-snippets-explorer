@@ -29,7 +29,8 @@ This extension has no extension settings available.
 
 ## Known Issues
 
-Linux not tested yet (coming soon!).
+Refresh button not working - for now just restart vscode 
+if you want to detect new or changed snippets.
 
 ## Release Notes
 

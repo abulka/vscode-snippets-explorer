@@ -2,6 +2,10 @@
 
 All notable changes to the "snippet-explorer" extension will be documented in this file.
 
+## 0.0.5
+
+- Added Linux support (tested on Ubuntu, vscode snap based installations)
+
 ## 0.0.4
 
 - Added missing jsonc parser to packages
