@@ -1,22 +1,3 @@
-# how to insert snippets programmatically
-
-https://stackoverflow.com/questions/45082780/how-do-i-add-a-snippet-programmatically
-
-@joshea I also had no luck inserting an existing snippet programmatically from my vscode extension code using e.g. `editor.insertSnippet({ langId: "javascript", name: "module_exports" }` - though I might have the syntax wrong. It seems a string is required like the doco says. Sure, the `"editor.action.insertSnippet"` keybinding command takes those fancy `"langId"` and `"name"` args but not `editor.insertSnippet`. However, as @Mike-Lischke suggested, I managed to programmatically do it using `vscode.commands.executeCommand` instead e.g. `vscode.commands.executeCommand("editor.action.insertSnippet", { langId: "javascript", name: "For Loop" })`.
-
-```json
-{
-  "key": "cmd+k 1",
-  "command": "editor.action.insertSnippet",
-  "when": "editorTextFocus",
-  "args": {
-    "langId": "csharp",
-    "name": "myFavSnippet"
-  }
-}
-```
-
-
 # Doco on snippet locations
 
 There are four snippet locations
@@ -24,6 +5,13 @@ There are four snippet locations
 - User Snippets
 - Extension Snippets
 - Built in Extension Snippets
+
+# Finding all snippet JSON files
+
+There does not seem to be any public API to enumerate all such snippet files in a programmatic way.
+https://stackoverflow.com/questions/58777976/get-visual-studio-code-snippets-scope-programmatically-using-api
+
+You have to loop through the dirs and find them all.
 
 ## Project Snippets
 
@@ -83,21 +71,35 @@ e.g.
 
 ## Built in Extension Snippets
 
-These are bundled with each release of vscode and cannot be changed. They contain e.g. the Javascript snippets which are part of the bundled Javascript extension.
+These are bundled with each release of vscode and cannot be changed. They contain e.g. the Javascript snippets which are part of the bundled Javascript extension.  They typically are delivered with and live next to the Vscode exectuable.
 
-On Windows 
+See also https://stackoverflow.com/questions/40110541/how-to-edit-existing-vs-code-snippets
+
+### On Windows 
 `C:\Program Files (x86)\Microsoft VS Code\resources\app\extensions\javascript\snippets\javascript.json`
 
-On Mac its `/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/extensions/javascript/snippets/javascript.code-snippets` - you'll have to navigate to the `Visual Studio Code` app and right click to Show Package Contents.
+### On Mac 
 
-See https://stackoverflow.com/questions/40110541/how-to-edit-existing-vs-code-snippets
+its `/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/extensions/javascript/snippets/javascript.code-snippets` - you'll have to navigate to the `Visual Studio Code` app and right click to Show Package Contents.
 
-# Listing all snippets
+### On Linux
 
-There does not seem to be any public API to enumerate all such snippet files in a programmatic way.
-https://stackoverflow.com/questions/58777976/get-visual-studio-code-snippets-scope-programmatically-using-api
+Assuming you install vscode as a snap, which ends up in `/snap` then extension seem to get placed in
+`/snap/code/current/usr/share/code/resources/app/extensions/` - however a
+more resilient approach is to look at node's `process.env._` entry 
+which is something like
+```
+"_": "/snap/code/39/usr/share/code/code",
+```
+and remove the trailing `'code'` (which is the vscode executable basename)
+then add `'/resources/app/extensions'` e.g. here is the nodejs code I use:
 
-You have to loop through the dirs and find them all.
+```javascript
+const removeBasename = dirname => path.parse(dirname).dir // util func
+const vscodePath = removeBasename(process.env._)
+extensionsPath = path.join(vscodePath, '/resources/app/extensions')
+```
+
 
 # Scanning JSON
 
