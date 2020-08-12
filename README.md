@@ -72,13 +72,11 @@ For tracking down issues this extension's log directory is called `vscode-snippe
 and the main debug file inside that directory is named `debug.log` 
 The extensions log directory can be found in:
 
-| Platform | Path |
-| --- | --- |
-| Mac     | ~/Library/Logs/ |
-| Linux   | ~/.config |
-| Windows | ~/AppData/Local/Programs/ |
-
-e.g. on Mac look at `~/Library/Logs/vscode-snippets-explorer/debug.log`
+| Platform | Path | Example |
+| --- | --- | --- |
+| Mac     | ~/Library/Logs/ |  `~/Library/Logs/vscode-snippets-explorer/debug.log` |
+| Linux   | ~/.config | `~/.config/vscode-snippets-explorer\debug.log` |
+| Windows | ~/AppData/Local/Programs/ | `C:\Users\USERNAME\AppData\Local\Programs\vscode-snippets-explorer\debug.log` |
 
 ## Known Issues
 
