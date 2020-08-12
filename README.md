@@ -6,10 +6,27 @@ This extension displays all available Visual Studio Code language snippets in a 
 
 ## Features
 
-Click on a snippet and it will be inserted into the active code editor.
-Hover over a snippet and the snippet body will be displayed.
+- Open up the `Snippets Explorer` treeview on the left and see all the snippets available for your current editor coding language
+- Preview snippet bodies and click to insert any snippet
+- A convenient way to check out the possibilites available to you
 
-# How to Use
+### Examples
+
+Try editing a Javascript file, you'll see all the available javascript snippets listed in the `Snippets Explorer` treeview.
+Click on e.g. the `for` snippet in the treeview and the for loop snippet template
+will be inserted into your code.
+
+Try editing a markdown `.md` document and you'll see bold, italic and various markdown 
+snippet templates appear in the `Snippets Explorer` treeview, under the `markdown` category.
+Select a word, click on 'bold' in the treeview and your word becomes wrapped in bold markdown. 
+
+# Installation
+
+View in the Visual Studio Code marketplace https://marketplace.visualstudio.com/items?itemName=wware.snippets-explorer
+
+Or search for `wware` in the extensions search window of vscode and install from there!
+
+## How to Use
 
 After the extension is installed, a treeview should be available called "Snippets Explorer". 
 

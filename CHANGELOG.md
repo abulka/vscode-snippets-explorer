@@ -2,6 +2,10 @@
 
 All notable changes to the "snippet-explorer" extension will be documented in this file.
 
+## 0.0.9
+
+- Readme improvements incl. examples
+
 ## 0.0.8
 
 - Bug fix focus jumping when in search view
