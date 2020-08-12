@@ -33,7 +33,7 @@ extension, some other similar extension, or by hand editing the `JSON` snippet f
 
 The refresh command is also useful after editing a *project 
 snippet file* or one of your language *user snippets* files.
->Tip: To edit your project snippet simply edit the `xxx` file in your project. To edit your user snippets for a language simply run the built in command `Preferences: Configure User Snippets` - remember to hit the Snippets Explorer refresh button after editing, to refresh the treeview!
+>Tip: To edit your project snippet simply edit the relevant `.code-snippets` file in your project's `.vscode` directory. To edit your user snippets for a language simply run the built in command `Preferences: Configure User Snippets` - remember to hit the Snippets Explorer refresh button after editing, to refresh the treeview!
 
 Finally, if you have **installed a new extension**, often extensions offer snippets, and you will want to re-scan for those using the refresh button.
 
@@ -49,7 +49,7 @@ There does not seem to be any public API to enumerate all such snippet files in
 a programmatic way. Therefore, this extension looks in the filesystem and finds
 and reads in these snippets knowing where vscode keeps these files.
 
-For more detail on this check out my developer notes [Doco on snippet locations](https://raw.githubusercontent.com/abulka/vscode-snippets-explorer/master/docs/finding_snippets_doco.md)
+For more detail on this check out my [snippet locations](docs/finding_snippets_doco.md) developer notes.
 
 ## Requirements
 
