@@ -2,6 +2,12 @@
 
 All notable changes to the "snippet-explorer" extension will be documented in this file.
 
+## 0.0.6
+
+- Bug fixes re treeview focus
+- Improved README documentation
+- Ignore `.log` files (snippets are not searched for this language id)
+
 ## 0.0.5
 
 - Added Linux support (tested on Ubuntu, vscode snap based installations)
