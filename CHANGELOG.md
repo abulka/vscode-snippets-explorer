@@ -2,6 +2,11 @@
 
 All notable changes to the "snippet-explorer" extension will be documented in this file.
 
+## 0.0.8
+
+- Bug fix focus jumping when in search view
+- Better debugging log file locations, incl. documentation in readme
+
 ## 0.0.7
 
 - Bug fixes re treeview focus
