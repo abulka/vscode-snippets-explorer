@@ -2,7 +2,7 @@
 
 All notable changes to the "snippet-explorer" extension will be documented in this file.
 
-## 0.0.6
+## 0.0.7
 
 - Bug fixes re treeview focus
 - Improved README documentation
