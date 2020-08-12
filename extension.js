@@ -36,7 +36,7 @@ function activate(context) {
 		showCollapseAll: true,
 		treeDataProvider: snippetTreeDataProvider
 	});
-	snippetTreeDataProvider.treeview = treeview // a bit hacky - is there a better way?
+	snippetTreeDataProvider.setTreeView(treeview) // a bit hacky - is there a better way?
 
 	// snippets tree 'refresh' button
 	vscode.commands.registerCommand('snippetsExplorer.refreshEntry', () =>
