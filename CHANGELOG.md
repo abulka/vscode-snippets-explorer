@@ -2,6 +2,10 @@
 
 All notable changes to the "snippet-explorer" extension will be documented in this file.
 
+## 1.0.0
+
+- Async, faster reading of filesystem snippets
+
 ## 0.0.9
 
 - Readme improvements incl. examples
