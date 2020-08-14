@@ -13,36 +13,36 @@ const { appLog: appLog } = require("./lib/app_logger")
  */
 async function activate(context) {
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	appLog('Congratulations, your extension "snippetsexplorer" is now active!');
+    // Use the console to output diagnostic information (console.log) and errors (console.error)
+    // This line of code will only be executed once when your extension is activated
+    appLog('Congratulations, your extension "snippetsexplorer" is now active!');
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable
+    // The command has been defined in the package.json file
+    // Now provide the implementation of the command with  registerCommand
+    // The commandId parameter must match the command field in package.json
+    let disposable
 
-	disposable = vscode.commands.registerCommand('extension.snippet_inserter', function (snippetBody) {
-		if (!snippetBody)
-			vscode.window.showInformationMessage(`Insert Snippet from Treeview is triggered by clicking on a snippet in the treeview - shouldn't be manually invoked`);
-		snippet_inserter(snippetBody)
-	});
-	context.subscriptions.push(disposable);
+    disposable = vscode.commands.registerCommand('extension.snippet_inserter', function (snippetBody) {
+        if (!snippetBody)
+            vscode.window.showInformationMessage(`Insert Snippet from Treeview is triggered by clicking on a snippet in the treeview - shouldn't be manually invoked`);
+        snippet_inserter(snippetBody)
+    });
+    context.subscriptions.push(disposable);
 
-	// tree view stuff (tree data providers are all NodeDependenciesProvider types)
+    // tree view stuff (tree data providers are all NodeDependenciesProvider types)
 
-	let snippetTreeDataProvider = new SnippetTreeDataProvider()
-	await snippetTreeDataProvider.init()
-	let treeview = vscode.window.createTreeView('snippetsExplorerView', {
-		showCollapseAll: true,
-		treeDataProvider: snippetTreeDataProvider
-	});
-	snippetTreeDataProvider.setTreeView(treeview) // a bit hacky - is there a better way?
+    let snippetTreeDataProvider = new SnippetTreeDataProvider()
+    await snippetTreeDataProvider.init()
+    let treeview = vscode.window.createTreeView('snippetsExplorerView', {
+        showCollapseAll: true,
+        treeDataProvider: snippetTreeDataProvider
+    });
+    snippetTreeDataProvider.setTreeView(treeview) // a bit hacky - is there a better way?
 
-	// snippets tree 'refresh' button
-	vscode.commands.registerCommand('snippetsExplorer.refreshEntry', () =>
-		snippetTreeDataProvider.refresh()
-	);
+    // snippets tree 'refresh' button
+    vscode.commands.registerCommand('snippetsExplorer.refreshEntry', () =>
+        snippetTreeDataProvider.refresh()
+    );
 
 }
 exports.activate = activate;
@@ -75,6 +75,6 @@ And uncomment this code:
 */
 
 module.exports = {
-	activate,
-	deactivate
+    activate,
+    deactivate
 }
