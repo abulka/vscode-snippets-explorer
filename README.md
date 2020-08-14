@@ -97,8 +97,8 @@ The extensions log directory can be found in:
 
 ## Known Issues
 
-Scanning for snippets is not currently asynchronous and arguably could be 
-sped up by converting the code to be asynchronous. If you can help with this, PR's are accepted! See issue [#1](https://github.com/abulka/vscode-snippets-explorer/issues/1).
+As you switch files, the current language will be selected in the snippets treeview which is usually what you want. 
+However it should ideally be left unchanged if you are already in the appropriate language area of the snippets treeview.
 
 ## Release Notes
 

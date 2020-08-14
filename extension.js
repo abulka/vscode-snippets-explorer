@@ -11,7 +11,7 @@ const { appLog: appLog } = require("./lib/app_logger")
 /**
  * @param {vscode.ExtensionContext} context
  */
-function activate(context) {
+async function activate(context) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
@@ -32,6 +32,7 @@ function activate(context) {
 	// tree view stuff (tree data providers are all NodeDependenciesProvider types)
 
 	let snippetTreeDataProvider = new SnippetTreeDataProvider()
+	await snippetTreeDataProvider.init()
 	let treeview = vscode.window.createTreeView('snippetsExplorerView', {
 		showCollapseAll: true,
 		treeDataProvider: snippetTreeDataProvider
