@@ -97,8 +97,7 @@ The extensions log directory can be found in:
 
 ## Known Issues
 
-As you switch files, the current language will be selected in the snippets treeview which is usually what you want. 
-However it should ideally be left unchanged if you are already in the appropriate language area of the snippets treeview.
+Packaging of extension javascript code not yet optimally 'bundled' - see issue #5
 
 ## Release Notes
 
