@@ -1,0 +1,9 @@
+{
+	"dedent import": {
+		"prefix": "dedentimport2222",
+		"body": [
+			"from textwrap import dedent\n"
+		],
+		"description": "import dedent function 22222"
+	},
+}
