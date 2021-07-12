@@ -97,6 +97,8 @@ The extensions log directory can be found in:
 
 ## Known Issues
 
+Python programmers may notice no official snippets listed. This is because the Python snippets were [deliberately removed](https://stackoverflow.com/questions/66114581/vs-code-no-longer-shows-default-code-snippet-for-python) from the `microsoft / vscode-python` extension. Workaround [here](https://github.com/abulka/vscode-snippets-explorer/issues/8).
+
 Packaging of extension javascript code not yet optimally 'bundled' - see issue #5
 
 ## Release Notes
