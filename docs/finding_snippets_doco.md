@@ -75,6 +75,8 @@ These are bundled with each release of vscode and cannot be changed. They contai
 
 See also https://stackoverflow.com/questions/40110541/how-to-edit-existing-vs-code-snippets
 
+Note: Python snippets have been removed from the MS Python extension.
+
 ### On Windows 
 `C:\Program Files (x86)\Microsoft VS Code\resources\app\extensions\javascript\snippets\javascript.json`
 
@@ -100,6 +102,19 @@ const vscodePath = removeBasename(process.env._)
 extensionsPath = path.join(vscodePath, '/resources/app/extensions')
 ```
 
+## Portable Mode Snippets
+
+A final location to look for snippets...
+
+Look for a 'data' subdirectory underneath vscode install location, 
+just in case Visual Studio Code is used in portable mode - see https://github.com/abulka/vscode-snippets-explorer/issues/9 
+
+Then derive snippets dir e.g. `c:\Users\Andy\AppData\Local\Programs\Microsoft VS Code\data\user-data\User\snippets\`
+
+Tested on Windows and Mac, not on Linux.
+
+    e.g. Mac: '/Applications/Visual Studio Code.app/Contents/Resources/app'
+    e.g. Windows: 'c:\Users\Andy\AppData\Local\Programs\Microsoft VS Code\resources\app'
 
 # Scanning JSON
 

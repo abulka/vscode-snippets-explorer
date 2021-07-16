@@ -56,11 +56,12 @@ Finally, if you have **installed a new extension**, often extensions offer snipp
 
 ## Where are snippets JSON files found?
 
-There are four snippet locations that are scanned:
+There are five snippet locations that are scanned:
 - Project Snippets
 - User Snippets
 - Extension Snippets
 - Built in Extension Snippets
+- In the `data` directory underneath the vscode app (portable mode)
 
 There does not seem to be any public API to enumerate all such snippet files in
 a programmatic way. Therefore, this extension looks in the filesystem and finds

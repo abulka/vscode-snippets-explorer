@@ -2,6 +2,14 @@
 
 All notable changes to the "snippet-explorer" extension will be documented in this file.
 
+## 1.0.4
+
+- Portable Mode Snippets detection
+  
+## 1.0.3
+
+- Readme doco on why Python extension snippets are not showing up.
+
 ## 1.0.2
 
 - Fixed broken refresh button
