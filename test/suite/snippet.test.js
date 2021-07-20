@@ -10,4 +10,3 @@ suite('Snippet general tests', () => {
     });
 
 });
-
