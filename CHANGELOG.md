@@ -2,6 +2,11 @@
 
 All notable changes to the "snippet-explorer" extension will be documented in this file.
 
+## 1.0.5
+
+- Made resilient against snippets with no descriptions
+- Better detection of Flutter snippets in Dart language mode
+
 ## 1.0.4
 
 - Portable Mode Snippets detection
