@@ -62,7 +62,7 @@ There are five snippet locations that are scanned:
 - Extension Snippets
 - Built in Extension Snippets
 - In the `data` directory underneath the vscode app (portable mode)
-- TODO Global User Snippets in ~/Library/Application Support/Code/User/snippets/*.code-snippets
+- TODO Global User Snippets (found in `~/Library/Application Support/Code/User/snippets/` which is the same location as language specific snippets with `.json` extensions except that global user snippets have arbitrary user defined file names and the `.code-snippets` file extension).
 
 There does not seem to be any public API to enumerate all such snippet files in
 a programmatic way. Therefore, this extension looks in the filesystem and finds

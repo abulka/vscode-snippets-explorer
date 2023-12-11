@@ -5,7 +5,7 @@ There are four snippet locations
 - User Snippets
 - Extension Snippets
 - In the `data` directory underneath the vscode app (portable mode)
-- TODO Global User Snippets in ~/Library/Application Support/Code/User/snippets/*.code-snippets
+- TODO Global User Snippets (found in `~/Library/Application Support/Code/User/snippets/` which is the same location as language specific snippets with `.json` extensions except that global user snippets have arbitrary user defined file names and the `.code-snippets` file extension).
 
 # Finding all snippet JSON files
 
@@ -123,17 +123,19 @@ TODO
 
 Currently not implemented, as mentioned in https://github.com/abulka/vscode-snippets-explorer/issues/11
 
-Found in ~/Library/Application Support/Code/User/snippets/*.code-snippets
+Found in `~/Library/Application Support/Code/User/snippets/` which is the same location as language specific snippets with `.json` extensions except that global user snippets have arbitrary user defined file names and the `.code-snippets` file extension e.g.
 
-Created via 
+    andyglobalsnippets.code-snippets   <--- this is a global user snippet file
+    dart.json
+    html.json
+    javascript.json
+    json.json
+    jsonc.json
+    markdown.json
+    python.json
+    ...
 
-    Settings gear icon -> User snippets -> New global snippets file
-
-Edited via
-
-    Command Palette -> Preferences: Configure User Snippets
-
-then selecting the global snippets file from the list.
+Created via `Settings gear icon -> User snippets -> New global snippets file` and edited via `Command Palette -> Preferences: Configure User Snippets` then selecting the global snippets file from the list.
 
 
 # Scanning JSON
