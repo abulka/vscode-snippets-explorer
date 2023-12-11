@@ -4,7 +4,8 @@ There are four snippet locations
 - Project Snippets
 - User Snippets
 - Extension Snippets
-- Built in Extension Snippets
+- In the `data` directory underneath the vscode app (portable mode)
+- TODO Global User Snippets in ~/Library/Application Support/Code/User/snippets/*.code-snippets
 
 # Finding all snippet JSON files
 
@@ -115,6 +116,25 @@ Tested on Windows and Mac, not on Linux.
 
     e.g. Mac: '/Applications/Visual Studio Code.app/Contents/Resources/app'
     e.g. Windows: 'c:\Users\Andy\AppData\Local\Programs\Microsoft VS Code\resources\app'
+
+## Global User Snippets
+
+TODO
+
+Currently not implemented, as mentioned in https://github.com/abulka/vscode-snippets-explorer/issues/11
+
+Found in ~/Library/Application Support/Code/User/snippets/*.code-snippets
+
+Created via 
+
+    Settings gear icon -> User snippets -> New global snippets file
+
+Edited via
+
+    Command Palette -> Preferences: Configure User Snippets
+
+then selecting the global snippets file from the list.
+
 
 # Scanning JSON
 
