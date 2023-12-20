@@ -43,7 +43,7 @@
 			},
 			{
 				"command": "snippetsExplorer.refreshEntry",
-				"title": "Refresh (rescan available snippets)",
+				"title": "Snippets Explorer: Refresh (rescan available snippets)",
 				"icon": {
 					"light": "images/light/refresh.svg",
 					"dark": "images/dark/refresh.svg"
@@ -51,12 +51,11 @@
 			}
 		],
 		"views": {
-			"explorer": [
+			"snippets-explorer": [
 				{
 					"id": "snippetsExplorerView",
 					"name": "Snippets Explorer",
-					"icon": "images/icon.png",
-					"tooltip": "Snippets Explorer"
+					"icon": "images/icon.png"
 				}
 			]
 		},
