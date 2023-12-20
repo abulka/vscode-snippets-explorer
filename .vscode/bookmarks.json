@@ -1,0 +1,44 @@
+{
+	"files": [
+		{
+			"path": "lib/snippet_enumerator.js",
+			"bookmarks": [
+				{
+					"line": 26,
+					"column": 25,
+					"label": ""
+				},
+				{
+					"line": 47,
+					"column": 22,
+					"label": ""
+				},
+				{
+					"line": 107,
+					"column": 15,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "lib/snippet_scanner.js",
+			"bookmarks": [
+				{
+					"line": 36,
+					"column": 15,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "lib/snippet_tree.js",
+			"bookmarks": [
+				{
+					"line": 118,
+					"column": 51,
+					"label": ""
+				}
+			]
+		}
+	]
+}
