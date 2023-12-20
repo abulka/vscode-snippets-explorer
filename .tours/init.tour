@@ -1,0 +1,31 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "init",
+  "steps": [
+    {
+      "file": "extension.js",
+      "description": "triggers the initial creation of the data tree during extension activation",
+      "line": 35
+    },
+    {
+      "file": "lib/snippet_tree.js",
+      "description": "rebuilds the data Tree!",
+      "line": 75
+    },
+    {
+      "file": "lib/snippet_tree.js",
+      "description": "this is the heart of the building of the tree.\nforget about runjobs since this only ever has one job in it, for the current language.\nCALLS enumerateSnippets() to calculate this.snippetTree\nTHEN loop thought languages in this.snippetTree (only ONE language ever, again, I suppose, so loop not necessary)",
+      "line": 234
+    },
+    {
+      "file": "lib/snippet_tree.js",
+      "description": "loops through \n   fullPath, snippets\nof the this.snippetTree",
+      "line": 254
+    },
+    {
+      "file": "lib/snippet_tree.js",
+      "description": "ROOT elelment of tree\nHmmm - I wonder if we can clear the tree completely first, before rebuilding?",
+      "line": 317
+    }
+  ]
+}
