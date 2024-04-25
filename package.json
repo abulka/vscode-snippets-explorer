@@ -27,7 +27,7 @@
 		"type": "git",
 		"url": "https://github.com/abulka/vscode-snippets-explorer"
 	},
-	"license": "GPL",
+	"license": "MIT",
 	"activationEvents": [
 		"onCommand:extension.snippet_inserter",
 		"onCommand:extension.enumerateSnippets",
