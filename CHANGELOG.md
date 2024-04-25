@@ -2,6 +2,12 @@
 
 All notable changes to the "snippet-explorer" extension will be documented in this file.
 
+## 1.0.6
+
+- Support for Global Snippets (`.code-snippets` files in `~/Library/Application Support/Code/User/snippets/`)
+- Remove previous language mode snippets when switching to a new language mode
+- Better labels for snippet icons in treeview
+
 ## 1.0.5
 
 - Made resilient against snippets with no descriptions
