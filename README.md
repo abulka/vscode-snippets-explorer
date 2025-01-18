@@ -88,14 +88,14 @@ This extension has no extension settings available.
 ## Log files
 
 For tracking down issues this extension's log directory is called `vscode-snippets-explorer`
-and the main debug file inside that directory is named `debug.log` 
+and the main debug file inside that directory is named `vscode-snippets-explorer-debug.log` 
 The extensions log directory can be found in:
 
 | Platform | Path | Example |
 | --- | --- | --- |
-| Mac     | ~/Library/Logs/ |  `~/Library/Logs/vscode-snippets-explorer/debug.log` |
-| Linux   | ~/.config | `~/.config/vscode-snippets-explorer\debug.log` |
-| Windows | ~/AppData/Local/Programs/ | `C:\Users\USERNAME\AppData\Local\Programs\vscode-snippets-explorer\debug.log` |
+| Mac     | ~/Library/Logs/ |  `~/Library/Logs/vscode-snippets-explorer/vscode-snippets-explorer-debug.log` |
+| Linux   | ~/.config | `~/.config/vscode-snippets-explorer\vscode-snippets-explorer-debug.log` |
+| Windows | ~/AppData/Local/Programs/ | `C:\Users\USERNAME\AppData\Local\Programs\vscode-snippets-explorer\vscode-snippets-explorer-debug.log` |
 
 ## Known Issues
 
