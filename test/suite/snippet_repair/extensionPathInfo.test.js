@@ -73,7 +73,7 @@ suite('createMetaEntry', () => {
 
         let expectedMetaDict = {
             "kind": 2,
-            "kindNiceName": "USER",
+            "kindNiceName": "USER (user defined)",
             "languageId": "python",
             "extensionPathInfo": {
                 "fullPath": "/Users/andy/.vscode/extensions/ms-python.python-2020.7.96456/snippets/python.json",
