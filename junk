@@ -1,0 +1,37 @@
+
+> snippets-explorer@1.0.6 lint
+> eslint . --debug
+
+
+/Users/andy/Devel/vscode-extensions/vscode-snippets-explorer/lib/snippet_enumerator.js
+  131:12  warning  'e' is defined but never used      no-unused-vars
+  154:14  warning  'error' is defined but never used  no-unused-vars
+  226:14  warning  'error' is defined but never used  no-unused-vars
+  269:14  warning  'error' is defined but never used  no-unused-vars
+
+/Users/andy/Devel/vscode-extensions/vscode-snippets-explorer/lib/snippet_repair/removeOutdatedExtensions_AI_NEW_BUGGY.js
+   1:10  warning  'removeOutdatedExtensions' is defined but never used  no-unused-vars
+   2:21  warning  'Group' is not defined                                no-undef
+  12:30  warning  'SnippetKind' is not defined                          no-undef
+  14:17  warning  'appLog' is not defined                               no-undef
+  18:5   warning  'appLog' is not defined                               no-undef
+  22:9   warning  'appLog' is not defined                               no-undef
+  42:17  warning  'appLog' is not defined                               no-undef
+  45:21  warning  'appLog' is not defined                               no-undef
+  47:23  warning  'appLog' is not defined                               no-undef
+  54:29  warning  'appLog' is not defined                               no-undef
+
+/Users/andy/Devel/vscode-extensions/vscode-snippets-explorer/lib/snippet_scanner.js
+  105:51  warning  '_' is defined but never used                                 no-unused-vars
+  111:51  warning  '_' is defined but never used                                 no-unused-vars
+  312:10  warning  'reduceNumberOfSnippetsForTesting' is defined but never used  no-unused-vars
+
+/Users/andy/Devel/vscode-extensions/vscode-snippets-explorer/lib/snippet_tree.js
+  283:13  warning  Unused eslint-disable directive (no problems were reported from 'no-unused-vars')
+
+/Users/andy/Devel/vscode-extensions/vscode-snippets-explorer/test/suite/snippet_repair/removeOutdatedExtensions.test.js
+  110:13  warning  Unused eslint-disable directive (no problems were reported from 'no-unused-vars')
+
+✖ 19 problems (0 errors, 19 warnings)
+  0 errors and 2 warnings potentially fixable with the `--fix` option.
+
