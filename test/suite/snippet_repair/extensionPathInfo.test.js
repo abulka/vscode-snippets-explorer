@@ -88,9 +88,9 @@ suite('createMetaEntry', () => {
 
     test('extensionVersion extraction - simple way', () => {
         let info = new ExtensionPathInfo('/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.3.1-darwin-arm64/snippets/python.json')
-        assert.equal(info.extensionId, 'ms-python.python');
+        assert.equal(info.extensionId, 'ms-toolsai.jupyter');
         assert.equal(info.extensionVersion, '2024.3.1');
-        assert.equal(info.basename, 'ms-toolsai.jupyter');
+        assert.equal(info.basename, 'python.json');
     });
 
     test('extensionVersion extraction - complex way', () => {
