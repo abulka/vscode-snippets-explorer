@@ -2,6 +2,13 @@
 
 All notable changes to the "snippet-explorer" extension will be documented in this file.
 
+## 1.0.7
+
+- Filter snippets feature, you can search for snippets by typing in the filter box at the top of the treeview
+- Deeper scan for snippets offered by extensions via the package.json `contributes.snippets` field
+- More descriptive snippet extension labels shown in the treeview letting you know where the snippet came from
+- Removed duplicate snippet entries in treeview due to multiple old versions of same extension being found
+
 ## 1.0.6
 
 - Support for Global Snippets (`.code-snippets` files in `~/Library/Application Support/Code/User/snippets/`)

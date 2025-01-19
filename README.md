@@ -9,6 +9,7 @@ This extension displays all available Visual Studio Code language snippets in a 
 - Open up the `Snippets Explorer` treeview on the left and see all the snippets available for your current editor coding language
 - Preview snippet bodies and click to insert any snippet
 - A convenient way to check out the possibilites available to you
+- Filter snippets by typing in the filter box at the top of the treeview
 
 ### Examples
 
@@ -57,6 +58,8 @@ Finally, if you have **installed a new extension**, often extensions offer snipp
 ## Filtering Snippets
 
 You can filter snippets by typing in the filter box at the top of the treeview.
+
+![feature X](images/doc/screenshot-filter-feature.png)
 
 You can also run the command `Snippets Explorer: Filter Snippets` to bring up the filter box.
 
@@ -111,7 +114,8 @@ Packaging of extension javascript code not yet optimally 'bundled' - see issue #
 
 ## Release Notes
 
-
 See [CHANGELOG.md](CHANGELOG.md)
+
+Note to self: publish via `vsce package` and `vsce publish`
 
 **Enjoy!**
