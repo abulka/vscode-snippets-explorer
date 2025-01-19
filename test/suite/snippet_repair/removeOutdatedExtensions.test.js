@@ -107,7 +107,6 @@ suite('Remove outdated extension snippets', () => {
 
         /** Our test data has simple meta with kind only - fix */
         function _fixMetas(snippetTree) {
-            // eslint-disable-next-line no-unused-vars
             for (const [languageId, fullPathsDict] of Object.entries(snippetTree)) {
                 for (const [fullPath, snippetsDict] of Object.entries(fullPathsDict)) {
                     let kind = snippetsDict._meta_.kind

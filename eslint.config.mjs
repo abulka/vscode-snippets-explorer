@@ -1,8 +1,6 @@
 import globals from "globals";
 
 export default [
-  // ANDY: had to explicitly exclude .vscode-test from the ignore list
-  // by adding this rule object to the array.
   {
     ignores: [
       "**/.vscode-test/**",
@@ -26,8 +24,13 @@ export default [
       "no-this-before-super": "warn",
       "no-undef": "warn",
       "no-unreachable": "warn",
-      "no-unused-vars": "warn",
+      "no-unused-vars": ["warn", { 
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }],
       "constructor-super": "warn",
       "valid-typeof": "warn",
     },
-  }];
+  }
+];

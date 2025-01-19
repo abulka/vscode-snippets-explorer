@@ -29,10 +29,8 @@
 	},
 	"license": "MIT",
 	"activationEvents": [
-		"onCommand:extension.snippet_inserter",
 		"onCommand:extension.enumerateSnippets",
-		"onView:exampleView",
-		"onView:snippetsExplorerView"
+		"onView:exampleView"
 	],
 	"main": "./extension.js",
 	"contributes": {
