@@ -1,6 +1,6 @@
 // node test/pathPrefixStripTest.js
 
-const { pathPrefixStrip } = require('../lib/pathPrefixStrip.js');
+const { pathPrefixStrip } = require('../../lib/pathPrefixStrip.js');
 const assert = require('assert');
 
 // Example usage:

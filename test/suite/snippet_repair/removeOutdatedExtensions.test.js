@@ -1,8 +1,8 @@
 const assert = require('assert');
-const { removeOutdatedExtensions } = require("../../../lib/snippet_repair/removeOutdatedExtensions");
+const { removeOutdatedExtensions, sortMetaArray } = require("../../../lib/snippet_repair/removeOutdatedExtensions");
 const { removeSnippetBodies } = require("../../../lib/snippet_repair/removeSnippetBodies");
 const { SnippetKind } = require("../../../lib/snippet_kind")
-const { expandFixSimpleMetas } = require("../../../lib/snippet_repair/expandFixSimpleMetas")
+const { expandFixSimpleMetas: recalculateMetas } = require("../../../lib/snippet_repair/expandFixSimpleMetas")
 
 suite('Remove outdated extension snippets', () => {
 
@@ -106,7 +106,7 @@ suite('Remove outdated extension snippets', () => {
         }
 
         /** Our test data has simple meta with kind only - fix */
-        expandFixSimpleMetas(snippetTree)
+        recalculateMetas(snippetTree)
 
         let expectedSnippetsStructure = {  // not sure how to compare properly yet with a filled in snippet structure
             "python": {
@@ -144,8 +144,8 @@ suite('Remove outdated extension snippets', () => {
                   "kindNiceName": "EXTENSION (provided by an extension)",
                   "extensionPathInfo": {
                     "fullPath": "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.3.1-darwin-arm64/snippets/python.json",
-                    "extensionId": "ms-toolsai.jupyter-2024.3.1-darwin-arm",
-                    "extensionVersion": "64",
+                    "extensionId": "ms-toolsai.jupyter-2024.3.1-darwin-arm", // <- note this is wrong
+                    "extensionVersion": "64",  // <- note this is wrong
                     "basename": "python.json"
                   }
                 }
@@ -256,12 +256,68 @@ suite('Remove outdated extension snippets', () => {
               }
             }
         }
+
         // AHA it looks like the _meta_.extensionPathInfo.version is not being calculated correctly
+        // the meta data above is all crap, taken from an earlier bad code run.  Let's recalculate it
+        recalculateMetas(snippetTree)
 
         removeOutdatedExtensions(snippetTree)
         assert.deepEqual(Object.keys(snippetTree), ["python"]);
+
         // we want the most recent one to be picked
+        /*
+        "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.11.0-darwin-arm64/snippets/python.json" <-- latest
+        "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.10.0-darwin-arm64/snippets/python.json"
+        "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.9.1-darwin-arm64/snippets/python.json"
+        "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.8.1-darwin-arm64/snippets/python.json"
+        "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.7.0-darwin-arm64/snippets/python.json"
+        "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.6.0-darwin-arm64/snippets/python.json"
+        "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.5.0-darwin-arm64/snippets/python.json"
+        "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.4.0-darwin-arm64/snippets/python.json"
+        "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.3.1-darwin-arm64/snippets/python.json"
+        */
         assert.deepEqual(Object.keys(snippetTree.python), ["/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.11.0-darwin-arm64/snippets/python.json"]);
+    });
+
+    test('sortMetaArray', () => {
+      const metaArray = [
+        // {
+        //   "languageId": "python",
+        //   "extensionPathInfo": {
+        //     "fullPath": "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.9.1-darwin-arm64/snippets/python.json",
+        //     "extensionId": "ms-toolsai.jupyter",
+        //     "extensionVersion": "2024.9.1",
+        //     "basename": "python.json"
+        //   }
+        // },
+
+        // don't need full meta entries just for testing the sort
+        { "extensionPathInfo": { extensionVersion: "2024.8.1" } },
+        { "extensionPathInfo": { extensionVersion: "2024.10.0" } },
+        { "extensionPathInfo": { extensionVersion: "2024.6.0" } },
+        { "extensionPathInfo": { extensionVersion: "2024.9.1" } },
+        { "extensionPathInfo": { extensionVersion: "2024.7.0" } },
+        { "extensionPathInfo": { extensionVersion: "2024.3.1" } },
+        { "extensionPathInfo": { extensionVersion: "2024.5.0" } },
+        { "extensionPathInfo": { extensionVersion: "2024.11.0" } },
+        { "extensionPathInfo": { extensionVersion: "2024.4.0" } },
+      ]
+
+      sortMetaArray(metaArray)
+
+      const expected = [
+        { "extensionPathInfo": { extensionVersion: "2024.11.0" } },
+        { "extensionPathInfo": { extensionVersion: "2024.10.0" } },
+        { "extensionPathInfo": { extensionVersion: "2024.9.1" } },
+        { "extensionPathInfo": { extensionVersion: "2024.8.1" } },
+        { "extensionPathInfo": { extensionVersion: "2024.7.0" } },
+        { "extensionPathInfo": { extensionVersion: "2024.6.0" } },
+        { "extensionPathInfo": { extensionVersion: "2024.5.0" } },
+        { "extensionPathInfo": { extensionVersion: "2024.4.0" } },
+        { "extensionPathInfo": { extensionVersion: "2024.3.1" } },
+      ]
+
+      assert.deepEqual(metaArray, expected)
     });
 
 });

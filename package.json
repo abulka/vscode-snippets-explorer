@@ -71,6 +71,8 @@
 		"lint": "eslint .",
 		"pretest": "npm run lint",
 		"test": "vscode-test",
+		"test-show-console-and-logging": "vscode-test --reporter spec",
+		"test-specific-test": "vscode-test --reporter spec --run /Users/andy/Devel/vscode-extensions/vscode-snippets-explorer/test/suite/snippet_repair/removeOutdatedExtensions.test.js",
 		"testOld": "node ./test/runTest.js"
 	},
 	"devDependencies": {
