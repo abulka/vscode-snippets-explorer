@@ -2,7 +2,7 @@ const assert = require('assert');
 const { removeOutdatedExtensions, sortMetaArray } = require("../../../lib/snippet_repair/removeOutdatedExtensions");
 const { removeSnippetBodies } = require("../../../lib/snippet_repair/removeSnippetBodies");
 const { SnippetKind } = require("../../../lib/snippet_kind")
-const { expandFixSimpleMetas: recalculateMetas } = require("../../../lib/snippet_repair/expandFixSimpleMetas")
+const { recalculateMetas } = require("../../../lib/snippet_repair/recalculateMetas")
 
 suite('Remove outdated extension snippets', () => {
 
