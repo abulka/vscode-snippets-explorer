@@ -44,6 +44,28 @@ async function activate(context) {
         snippetTreeDataProvider.refresh()
     );
 
+    // Register the filter command
+    vscode.commands.registerCommand('snippetsExplorer.filter', () => {
+        const filterInput = vscode.window.createQuickPick();
+        filterInput.placeholder = 'Filter snippets...';
+        filterInput.onDidChangeValue((value) => {
+            snippetTreeDataProvider.updateFilterQuery(value);
+        });
+        filterInput.show();
+    });
+
+    // Register the clear filter command
+    vscode.commands.registerCommand('snippetsExplorer.clearFilter', () => {
+        snippetTreeDataProvider.updateFilterQuery('');
+    });
+
+    // Create a filter button in the status bar
+    const filterButton = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
+    filterButton.text = '$(search) Filter Snippets';
+    filterButton.command = 'snippetsExplorer.filter';
+    filterButton.show();
+    context.subscriptions.push(filterButton);
+
 }
 exports.activate = activate;
 
@@ -53,25 +75,25 @@ function deactivate() { }
 /*
 Possible future command, to enable add this:
 
-	"commands": [
-		{
-			"command": "extension.enumerateSnippets",
-			"title": "Snippets Explorer: Enumerate All Snippets"
-		},
+    "commands": [
+        {
+            "command": "extension.enumerateSnippets",
+            "title": "Snippets Explorer: Enumerate All Snippets"
+        },
 
 And uncomment this code:
 
-	const { enumerateSnippets } = require('./lib/snippet_enumerator');
+    const { enumerateSnippets } = require('./lib/snippet_enumerator');
 
-	function activate(context) {
-		...
-		disposable = vscode.commands.registerCommand('extension.enumerateSnippets', function () {
-			let tmpSnippetTree = {} // discarded after we fill it in
-			let snippetTree = enumerateSnippets(tmpSnippetTree, 'javascript')
-			vscode.window.showInformationMessage(`Snippets found for languages: ${Object.keys(snippetTree)}`);
-				// perhaps do something else useful - insert all filenames or snippet names into active doc?
-		});
-		context.subscriptions.push(disposable);
+    function activate(context) {
+        ...
+        disposable = vscode.commands.registerCommand('extension.enumerateSnippets', function () {
+            let tmpSnippetTree = {} // discarded after we fill it in
+            let snippetTree = enumerateSnippets(tmpSnippetTree, 'javascript')
+            vscode.window.showInformationMessage(`Snippets found for languages: ${Object.keys(snippetTree)}`);
+                // perhaps do something else useful - insert all filenames or snippet names into active doc?
+        });
+        context.subscriptions.push(disposable);
 */
 
 module.exports = {

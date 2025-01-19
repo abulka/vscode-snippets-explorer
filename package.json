@@ -46,6 +46,22 @@
 					"light": "images/light/refresh.svg",
 					"dark": "images/dark/refresh.svg"
 				}
+			},
+			{
+				"command": "snippetsExplorer.filter",
+				"title": "Snippets Explorer: Filter Snippets",
+				"icon": {
+					"light": "images/light/filter.svg",
+					"dark": "images/dark/filter.svg"
+				}
+			},
+			{
+				"command": "snippetsExplorer.clearFilter",
+				"title": "Snippets Explorer: Clear Filter",
+				"icon": {
+					"light": "images/light/clear-all.svg",
+					"dark": "images/dark/clear-all.svg"
+				}
 			}
 		],
 		"views": {
@@ -61,6 +77,16 @@
 			"view/title": [
 				{
 					"command": "snippetsExplorer.refreshEntry",
+					"when": "view == snippetsExplorerView",
+					"group": "navigation"
+				},
+				{
+					"command": "snippetsExplorer.filter",
+					"when": "view == snippetsExplorerView",
+					"group": "navigation"
+				},
+				{
+					"command": "snippetsExplorer.clearFilter",
 					"when": "view == snippetsExplorerView",
 					"group": "navigation"
 				}

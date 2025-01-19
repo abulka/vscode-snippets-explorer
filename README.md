@@ -54,6 +54,12 @@ snippet file* or one of your language *user snippets* files.
 
 Finally, if you have **installed a new extension**, often extensions offer snippets, and you will want to re-scan for those using the refresh button.
 
+## Filtering Snippets
+
+You can filter snippets by typing in the filter box at the top of the treeview.
+
+You can also run the command `Snippets Explorer: Filter Snippets` to bring up the filter box.
+
 ## Where are snippets JSON files found?
 
 There are five snippet locations that are scanned:
