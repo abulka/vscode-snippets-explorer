@@ -1,5 +1,6 @@
 const assert = require('assert');
 const { ExtensionPathInfo, createMetaEntry } = require('../../../lib/extensionPathInfo')
+const { SnippetKind } = require("../../../lib/snippet_kind")
 
 suite('ExtensionPathInfo', () => {
 
@@ -85,5 +86,49 @@ suite('createMetaEntry', () => {
         assert.deepEqual(snippetsDict._meta_, expectedMetaDict)
     });
 
+    test('extensionVersion extraction - simple way', () => {
+        let info = new ExtensionPathInfo('/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.3.1-darwin-arm64/snippets/python.json')
+        assert.equal(info.extensionId, 'ms-python.python');
+        assert.equal(info.extensionVersion, '2024.3.1');
+        assert.equal(info.basename, 'ms-toolsai.jupyter');
+    });
+
+    test('extensionVersion extraction - complex way', () => {
+
+        // snippetTree is multiple languageId to treeEntries e.g. 'python': { fullPath: snippetsDict, ... }
+        // treeEntry is fullpath to snippetsDict e.g. '/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.3.1-darwin-arm64/snippets/python.json': { ... }
+
+        // eslint-disable-next-line no-unused-vars
+        const exampleSnippetTreeEntry = {
+            "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.3.1-darwin-arm64/snippets/python.json": {
+              // multiple snippets would be here... e.g.
+              // "name1": { "prefix": "prefix1", "body": [], "description": "description1" }, 
+              // "name2": { "prefix": "prefix2", "body": [], "description": "description2" },
+              // ...
+              "_meta_": {
+                "languageId": "python",
+                "kind": 3,
+                "kindNiceName": "EXTENSION (provided by an extension)",
+                "extensionPathInfo": {
+                  "fullPath": "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.3.1-darwin-arm64/snippets/python.json",
+                  "extensionId": "ms-toolsai.jupyter-2024.3.1-darwin-arm", // <--- should be "ms-toolsai.jupyter"
+                  "extensionVersion": "64", // <--- should be "2024.3.1"
+                  "basename": "python.json"
+                }
+              }
+            }
+        }
+
+        let kind = SnippetKind.EXTENSION
+        let languageId = "python"
+        let fullPath = "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.3.1-darwin-arm64/snippets/python.json"
+        let snippetsDict = {}
+
+        // adds snippetsDict._meta_.extensionPathInfo
+        createMetaEntry(snippetsDict, languageId, kind, fullPath)
+
+        assert.equal(snippetsDict._meta_.extensionPathInfo.extensionVersion, "2024.3.1")
+        assert.equal(snippetsDict._meta_.extensionPathInfo.extensionId, "ms-toolsai.jupyter")
+    });
 
 })
