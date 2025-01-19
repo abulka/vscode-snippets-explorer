@@ -144,115 +144,35 @@ suite('Remove outdated extension snippets', () => {
                   "kindNiceName": "EXTENSION (provided by an extension)",
                   "extensionPathInfo": {
                     "fullPath": "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.3.1-darwin-arm64/snippets/python.json",
-                    "extensionId": "ms-toolsai.jupyter-2024.3.1-darwin-arm", // <- note this is wrong
-                    "extensionVersion": "64",  // <- note this is wrong
+                    "extensionId": "ms-toolsai.jupyter-2024.3.1-darwin-arm", // <- note this is wrong, but we will recalculate soon
+                    "extensionVersion": "64",  // <- note this is wrong, but we will recalculate soon
                     "basename": "python.json"
                   }
                 }
               },
               "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.11.0-darwin-arm64/snippets/python.json": {
-                "_meta_": {
-                  "languageId": "python",
-                  "kind": 3,
-                  "kindNiceName": "EXTENSION (provided by an extension)",
-                  "extensionPathInfo": {
-                    "fullPath": "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.11.0-darwin-arm64/snippets/python.json",
-                    "extensionId": "ms-toolsai.jupyter-2024.11.0-darwin-arm",
-                    "extensionVersion": "64",
-                    "basename": "python.json"
-                  }
-                }
+                "_meta_": { "kind": SnippetKind.EXTENSION }
               },
               "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.4.0-darwin-arm64/snippets/python.json": {
-                "_meta_": {
-                  "languageId": "python",
-                  "kind": 3,
-                  "kindNiceName": "EXTENSION (provided by an extension)",
-                  "extensionPathInfo": {
-                    "fullPath": "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.4.0-darwin-arm64/snippets/python.json",
-                    "extensionId": "ms-toolsai.jupyter-2024.4.0-darwin-arm",
-                    "extensionVersion": "64",
-                    "basename": "python.json"
-                  }
-                }
+                "_meta_": { "kind": SnippetKind.EXTENSION }
               },
               "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.5.0-darwin-arm64/snippets/python.json": {
-                "_meta_": {
-                  "languageId": "python",
-                  "kind": 3,
-                  "kindNiceName": "EXTENSION (provided by an extension)",
-                  "extensionPathInfo": {
-                    "fullPath": "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.5.0-darwin-arm64/snippets/python.json",
-                    "extensionId": "ms-toolsai.jupyter-2024.5.0-darwin-arm",
-                    "extensionVersion": "64",
-                    "basename": "python.json"
-                  }
-                }
+                "_meta_": { "kind": SnippetKind.EXTENSION }
               },
               "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.10.0-darwin-arm64/snippets/python.json": {
-                "_meta_": {
-                  "languageId": "python",
-                  "kind": 3,
-                  "kindNiceName": "EXTENSION (provided by an extension)",
-                  "extensionPathInfo": {
-                    "fullPath": "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.10.0-darwin-arm64/snippets/python.json",
-                    "extensionId": "ms-toolsai.jupyter-2024.10.0-darwin-arm",
-                    "extensionVersion": "64",
-                    "basename": "python.json"
-                  }
-                }
+                "_meta_": { "kind": SnippetKind.EXTENSION }
               },
               "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.6.0-darwin-arm64/snippets/python.json": {
-                "_meta_": {
-                  "languageId": "python",
-                  "kind": 3,
-                  "kindNiceName": "EXTENSION (provided by an extension)",
-                  "extensionPathInfo": {
-                    "fullPath": "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.6.0-darwin-arm64/snippets/python.json",
-                    "extensionId": "ms-toolsai.jupyter-2024.6.0-darwin-arm",
-                    "extensionVersion": "64",
-                    "basename": "python.json"
-                  }
-                }
+                "_meta_": { "kind": SnippetKind.EXTENSION }
               },
               "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.7.0-darwin-arm64/snippets/python.json": {
-                "_meta_": {
-                  "languageId": "python",
-                  "kind": 3,
-                  "kindNiceName": "EXTENSION (provided by an extension)",
-                  "extensionPathInfo": {
-                    "fullPath": "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.7.0-darwin-arm64/snippets/python.json",
-                    "extensionId": "ms-toolsai.jupyter-2024.7.0-darwin-arm",
-                    "extensionVersion": "64",
-                    "basename": "python.json"
-                  }
-                }
+                "_meta_": { "kind": SnippetKind.EXTENSION }
               },
               "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.8.1-darwin-arm64/snippets/python.json": {
-                "_meta_": {
-                  "languageId": "python",
-                  "kind": 3,
-                  "kindNiceName": "EXTENSION (provided by an extension)",
-                  "extensionPathInfo": {
-                    "fullPath": "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.8.1-darwin-arm64/snippets/python.json",
-                    "extensionId": "ms-toolsai.jupyter-2024.8.1-darwin-arm",
-                    "extensionVersion": "64",
-                    "basename": "python.json"
-                  }
-                }
+                "_meta_": { "kind": SnippetKind.EXTENSION }
               },
               "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.9.1-darwin-arm64/snippets/python.json": {
-                "_meta_": {
-                  "languageId": "python",
-                  "kind": 3,
-                  "kindNiceName": "EXTENSION (provided by an extension)",
-                  "extensionPathInfo": {
-                    "fullPath": "/Users/andy/.vscode/extensions/ms-toolsai.jupyter-2024.9.1-darwin-arm64/snippets/python.json",
-                    "extensionId": "ms-toolsai.jupyter-2024.9.1-darwin-arm",
-                    "extensionVersion": "64",
-                    "basename": "python.json"
-                  }
-                }
+                "_meta_": { "kind": SnippetKind.EXTENSION }
               }
             }
         }
