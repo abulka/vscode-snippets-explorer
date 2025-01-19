@@ -2,7 +2,7 @@ const assert = require('assert');
 const { removeOutdatedExtensions } = require("../../../lib/snippet_repair/removeOutdatedExtensions");
 const { removeSnippetBodies } = require("../../../lib/snippet_repair/removeSnippetBodies");
 const { SnippetKind } = require("../../../lib/snippet_kind")
-const { createMetaEntry } = require("../../../lib/extensionPathInfo")
+const { expandFixSimpleMetas } = require("../../../lib/snippet_repair/expandFixSimpleMetas")
 
 suite('Remove outdated extension snippets', () => {
 
@@ -106,15 +106,7 @@ suite('Remove outdated extension snippets', () => {
         }
 
         /** Our test data has simple meta with kind only - fix */
-        function _fixMetas(snippetTree) {
-            for (const [languageId, fullPathsDict] of Object.entries(snippetTree)) {
-                for (const [fullPath, snippetsDict] of Object.entries(fullPathsDict)) {
-                    let kind = snippetsDict._meta_.kind
-                    createMetaEntry(snippetsDict, languageId, kind, fullPath)
-                }
-            }
-        }
-        _fixMetas(snippetTree)
+        expandFixSimpleMetas(snippetTree)
 
         let expectedSnippetsStructure = {  // not sure how to compare properly yet with a filled in snippet structure
             "python": {
