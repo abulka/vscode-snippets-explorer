@@ -2,6 +2,10 @@
 
 All notable changes to the "snippet-explorer" extension will be documented in this file.
 
+## 1.0.8
+
+- Fixed broken v1.0.7 release (moved some packages from devDependencies to dependencies)
+
 ## 1.0.7
 
 - Filter snippets feature, you can search for snippets by typing in the filter box at the top of the treeview
