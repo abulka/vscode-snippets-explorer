@@ -16,4 +16,4 @@ https://stackoverflow.com/questions/45082780/how-do-i-add-a-snippet-programmatic
 }
 ```
 
-See also [finding_snippets_doco.md](finding_snippets_doco.md)
+See also [finding_snippets_doco.md](finding_snippets.md)
