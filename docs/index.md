@@ -10,3 +10,8 @@ This is the developer documentation for the project. It is intended for develope
 - [Extension Contributes](extension_contributes.md)
 - [Finding Snippets on a computer](finding_snippets.md)
 - [Inserting Snippets](inserting_snippets.md)
+
+Back to
+
+- [README](../README.md)
+- [Change Log](../CHANGELOG.md)

@@ -8,6 +8,9 @@ All notable changes to the "snippet-explorer" extension will be documented in th
 - Deeper scan for snippets offered by extensions via the package.json `contributes.snippets` field
 - More descriptive snippet extension labels shown in the treeview letting you know where the snippet came from
 - Removed duplicate snippet entries in treeview due to multiple old versions of same extension being found
+- Fixed issue where snippets were not being found in some cases
+- Cache previously viewed snippets trees for faster loading
+- Restore expanded state of snippets treeview when switching files
 - Editing .vue files now shows vue, vue-html and related vue snippets.
 - Editing .ts files now also shows Javascript snippets
 

@@ -1,6 +1,6 @@
 # Doco on snippet locations
 
-There are four snippet locations
+There are several snippet locations
 - Project Snippets
 - User Snippets
 - Extension Snippets
@@ -69,10 +69,13 @@ e.g.
 > Note: The Mac/Linux locations can also be referred to via `$HOME` instead of `~` viz. 
 `$HOME/.vscode/extensions/`
 
+Extension snippets can be found in the `snippets` directory of the extension.  The snippet files are typically named after the language they are for e.g. `python.json` for the Python extension. The snippet files are typically in the root of the extension directory, or in a `snippets` subdirectory.
+
+Extension snippets can be explicity specified by the extension's `package.json` `contributes.snippets` field.  This is a list of snippet files and their language id.
 
 ## Built in Extension Snippets
 
-These are bundled with each release of vscode and cannot be changed. They contain e.g. the Javascript snippets which are part of the bundled Javascript extension.  They typically are delivered with and live next to the Vscode exectuable.
+These are bundled with each release of vscode and cannot be changed. They contain e.g. the Javascript snippets which are part of the bundled Javascript extension.  They typically are delivered with and live next to the Vscode executable.
 
 See also https://stackoverflow.com/questions/40110541/how-to-edit-existing-vs-code-snippets
 

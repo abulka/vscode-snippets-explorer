@@ -49,6 +49,7 @@ snippet e.g. using the 3rd party extension [Snippet Creator](
 https://marketplace.visualstudio.com/items?itemName=wware.snippet-creator)
 extension, some other similar extension, or by hand editing the `JSON` snippet file. Hitting the refresh button is necessary because you want to see those new snippets appear in the Snippets Explorer treeview. This extension will not auto-detect such changes to snippet files.
 
+![Refresh Button](images/doc/screenshot-refresh-feature.png)
 The refresh command is also useful after editing a *project 
 snippet file* or one of your language *user snippets* files.
 >Tip: To edit your project snippet simply edit the relevant `.code-snippets` file in your project's `.vscode` directory. To edit your user snippets for a language simply run the built in command `Preferences: Configure User Snippets` - remember to hit the Snippets Explorer refresh button after editing, to refresh the treeview!
@@ -77,7 +78,7 @@ There does not seem to be any public API to enumerate all such snippet files in
 a programmatic way. Therefore, this extension looks in the filesystem and finds
 and reads in these snippets knowing where vscode keeps these files.
 
-For more detail on this check out my [snippet locations](docs/finding_snippets_doco.md) developer notes.
+For more detail on this check out my [snippet locations](docs/finding_snippets.md) developer notes.
 
 ## Requirements
 
