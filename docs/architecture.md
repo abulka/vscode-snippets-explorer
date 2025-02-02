@@ -30,13 +30,3 @@ is a call to
 scanFile(snippetFile, kind, languageId)
 ```
 which scans a JSON file and return snippet dictionary
-
-
-# Debugging
-
-To debug, set the `debug` flag to `true` in the `listSnippets` call in `TreeDataProvider.ts`.
-
-Calls to `appLog` will be logged to the console and to the log file `/Users/andy/Library/Logs/vscode-snippets-explorer/vscode-snippets-explorer-debug.log` which can be viewed in the Mac Console app.
-
-![Debugging](/docs/images/debugging.png)
-
