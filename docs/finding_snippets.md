@@ -26,12 +26,15 @@ Depending on your platform, the user snippets directory is located here:
 - Mac $HOME/Library/Application Support/Code/User/snippets/
 - Linux $HOME/.config/Code/User/snippets/
 
-e.g.
+e.g. Mac
 `~/Library/Application\ Support/Code/User/snippets/` contains e.g. `dart.json
 html.json
 javascript.json
 plaintext.json  
 python.json`
+
+e.g. Windows, even when running under WSL, the user snippets are in the windows location
+`/C:/Users/Andy/AppData/Roaming/Code/User/snippets` contains e.g. `javascript.json`
 
 Here is some code to get to the appropriate directory:
 
